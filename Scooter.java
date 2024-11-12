@@ -14,18 +14,18 @@ public class Scooter {
         this.isBroken = false;
     }
 
-    public rent(User user) {
+    public void rent(User user) {
         if (this.charge >= 20 && isBroken) {
-            this.user = user.name;
+            this.user = user.username;
             System.out.println("Scooter assigned to: " + this.user);
         } else if (this.charge >= 20 && !isBroken){
-            throw new Exception("Scooter needs repaired");
+            System.out.println("Scooter needs repaired");
         } else if (this.charge < 20) {
-            throw new Exception("Scooter needs charged");
+            System.out.println("Scooter needs charged");
         }
     }
 
-    public dock(String station){
+    public void dock(String station){
         this.station = station;
         this.user = null;
         System.out.println("Scooter docked at: " + this.station + ".  We hope to see you again!");
